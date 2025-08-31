@@ -96,7 +96,7 @@ const toggleListening = () => {
       const formData = new FormData();
       formData.append("file", audioBlob, "recording.webm");
 
-      const res = await fetch("http://localhost:5000/api/transcribe", {
+      const res = await fetch("https://healthcare-m3c6.onrender.com/api/transcribe", {
         method: "POST",
         body: formData,
       });
@@ -123,7 +123,7 @@ const toggleListening = () => {
       if (sessionId) formData.append("session_id", sessionId);
       formData.append("message", message);
 
-      const res = await fetch("http://localhost:5000/api/chat", {
+      const res = await fetch("https://healthcare-m3c6.onrender.com/api/chat", {
         method: "POST",
         body: formData,
       });
