@@ -86,7 +86,7 @@ export const ChatInterface = () => {
       formData.append("session_id", sessionId);
       formData.append("message", userText);
 
-      const res = await fetch("http://localhost:5000/api/chat", {
+      const res = await fetch("https://healthcare-m3c6.onrender.com/api/chat", {
         method: "POST",
         body: formData,
       });
@@ -126,7 +126,7 @@ export const ChatInterface = () => {
       formData.append("session_id", sessionId);
       formData.append("file", file);
 
-      const res = await fetch("http://localhost:5000/api/chat", {
+      const res = await fetch("https://healthcare-m3c6.onrender.com/api/chat", {
         method: "POST",
         body: formData,
       });
@@ -170,7 +170,7 @@ export const ChatInterface = () => {
         formData.append("file", new File([blob], "voice.webm"));
 
         try {
-          const res = await fetch("http://localhost:5000/api/transcribe", {
+          const res = await fetch("https://healthcare-m3c6.onrender.com/api/transcribe", {
             method: "POST",
             body: formData,
           });
@@ -184,7 +184,7 @@ export const ChatInterface = () => {
             chatData.append("session_id", activeSession);
             chatData.append("message", data.text);
 
-            const chatRes = await fetch("http://localhost:5000/api/chat", {
+            const chatRes = await fetch("https://healthcare-m3c6.onrender.com/api/chat", {
               method: "POST",
               body: chatData,
             });
